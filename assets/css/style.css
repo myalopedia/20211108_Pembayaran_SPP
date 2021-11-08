@@ -1,0 +1,140 @@
+body {
+    background-color: #fff;
+    padding-top: 10px;
+    margin-bottom: 50px;
+}
+
+.p-100 {
+    padding-top: 100px;
+}
+
+.mt-10 {
+    margin-top: 10px;
+}
+
+.mt-20 {
+    margin-top: 20px;
+}
+
+.mt-30 {
+    margin-top: 30px;
+}
+
+.mt-50 {
+    margin-top: 50px;
+}
+
+.mt-70 {
+    margin-top: 70px;
+}
+
+.mb-50 {
+    margin-bottom: 50px;
+}
+
+.text-green {
+    color: #017840;
+    font-weight: 650;
+}
+
+.icon {
+    margin-right: 5px;
+}
+
+.img-nav {
+    width: auto; 
+    height: 32px; 
+    margin-right: 5px;
+    border-radius: 100%;
+}
+
+.account-wrap {
+    position: relative;
+    text-align: right;
+}
+
+.btn-t {
+    background: transparent;
+}
+
+.btn-menu{
+    width: 100%;
+    border: 1px solid #00783E;
+    background-color: #fff;
+    color: #017840;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    font-weight: 600;
+    display: inline-block;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 10px;
+}
+  
+.btn-menu:hover {
+    background-color: #00783E;
+    color: #fff;
+    box-shadow: #017840 -1px 1px 10px -1px;
+}
+
+.btn-upload {
+    margin-top: 10px;;
+    border-radius: 1rem;
+    padding-left: 25px;
+    padding-right: 25px;
+}
+
+.active {
+    background-color: #00783E;
+    color: #fff;
+}
+
+.tagihan {
+    padding: 20px 40px;
+    text-align: center;
+    font-weight: 500;
+}
+
+.note {
+    padding: 20px 40px;
+    text-align: justify;
+}
+
+.note li {
+    padding-left: 5px;
+}
+
+.profil {
+    padding: 2px 150px;
+}
+@media (max-width: 991px) {
+    .profil {
+        padding: 20px 25px;
+    }
+}
+
+.input-group-addon {
+    background-color: transparent;
+    border-left: 0;
+}
+
+.input-group-addon, .input-group-btn {
+    white-space: nowrap;
+    vertical-align: middle;
+}
+
+.input-group-addon {
+    padding: .5rem .75rem;
+    margin-bottom: 0;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.25;
+    color: #495057;
+    text-align: center;
+    background-color: #e9ecef;
+    border: 1px solid rgba(0, 0, 0, 0.15);
+    -webkit-border-radius: .25rem;
+    -moz-border-radius: .25rem;
+    border-radius: .25rem;
+}

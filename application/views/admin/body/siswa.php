@@ -40,6 +40,7 @@
                                                     <td class="text-left" style="font-size: 18px;">                                                                                                              
                                                         <a href="<?php echo base_url('admin/siswa/edit/'.$d->nis); ?>" data-toggle="tooltip" data-placement="bottom" title="Edit"><span class="iconify" data-icon="bx:bx-edit" style="color: #FFB763;"></span></a>
                                                         <a href="<?php echo base_url('admin/siswa/hapus/'.$d->nis); ?>" data-toggle="tooltip" data-placement="bottom" title="Hapus"><span class="iconify" data-icon="fluent:delete-24-filled" style="color: #ED3338;"></span></a>                                                       
+                                                        <a href="<?php echo base_url('admin/siswa/wa_notif/'.$d->nis); ?>" data-toggle="tooltip" data-placement="bottom" title="Kirim Laporan"><span class="iconify" data-icon="logos:whatsapp"></span></a>                                                       
                                                     </td>
                                                 </tr> 
 <?php } ?>                                                      

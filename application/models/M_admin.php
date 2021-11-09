@@ -89,6 +89,11 @@ class M_admin extends CI_Model{
         $query = $this->db->query("SELECT * FROM tb_tagihan A JOIN tb_tagihan_siswa B ON A.id=B.id_tagihan JOIN tb_siswa C ON B.nis=C.nis");
         return $query->result();
     }
+    public function data_siswa_belum_bayar($nis)
+    {
+        $query = $this->db->query("SELECT * FROM tb_tagihan A JOIN tb_tagihan_siswa B ON A.id=B.id_tagihan JOIN tb_siswa C ON B.nis=C.nis WHERE C.nis = '$nis'");
+        return $query->result();
+    }
     public function filter_data_belum_bayar($angkatan, $jurusan)
     {
         $query = $this->db->query("SELECT * FROM tb_tagihan A JOIN tb_tagihan_siswa B ON A.id=B.id_tagihan JOIN tb_siswa C ON B.nis=C.nis WHERE C.angkatan = $angkatan AND C.jurusan = '$jurusan'");

@@ -217,5 +217,44 @@ class Siswa extends CI_Controller {
 		}
 		return "default.png";
 	}
+	public function wa_notif($nis)
+	{
+		$data_siswa = $this->M_admin->data_siswa_belum_bayar($nis);
 
+		foreach ($data_siswa as $a) {
+			echo $a->no_hp;
+			$pesan = 'Yth. '.$a->nama_siswa.'
+				NIS : '.$a->nis.'
+						
+				Kami sampaikan pembayaran tagihan '.$a->keterangan.' Anda untuk '.$a->ket_tambahan.' sebesar Rp '.number_format($a->biaya,0,",",".").'. Silakan cek aplikasi untuk informasi lebih lanjut.
+						
+				Salam,
+				Administrasi SMK Muhammadiyah 1 Semarang.';
+
+			$curl2 = curl_init();
+			$token2 = "Fme9g46zqhRFhD2LltAqiSUVVYkVkNacVLiVq5q2k9Sgywpvb06kOm70YspEBpqU";
+			$data2 = [
+				'phone' => '0'.$a->no_hp,
+				'phone' => '0'.$a->no_hp_ortu,
+				'message' => $pesan,
+			];
+
+			curl_setopt($curl2, CURLOPT_HTTPHEADER,
+				array(
+					"Authorization: $token2",
+				)
+			);
+			curl_setopt($curl2, CURLOPT_CUSTOMREQUEST, "POST");
+			curl_setopt($curl2, CURLOPT_RETURNTRANSFER, true);
+			curl_setopt($curl2, CURLOPT_POSTFIELDS, http_build_query($data2));
+			curl_setopt($curl2, CURLOPT_URL, "https://console.wablas.com/api/send-message");
+			curl_setopt($curl2, CURLOPT_SSL_VERIFYHOST, 0);
+			curl_setopt($curl2, CURLOPT_SSL_VERIFYPEER, 0);
+			$result2 = curl_exec($curl2);
+			curl_close($curl2);
+
+		}
+
+		redirect(base_url('admin/siswa'));
+	}
 }

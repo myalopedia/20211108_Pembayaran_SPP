@@ -21,6 +21,16 @@ class M_admin extends CI_Model{
         return $id;
     }
 
+    public function get_tahun_angkatan()
+    {
+        $query = $this->db->query("SELECT * FROM tb_siswa GROUP BY angkatan");
+        return $query->result();
+    }
+    public function get_jurusan()
+    {
+        $query = $this->db->query("SELECT * FROM tb_siswa GROUP BY jurusan");
+        return $query->result();
+    }
     public function data_siswa()
     {
         $query = $this->db->query("SELECT * FROM tb_siswa");
@@ -77,6 +87,11 @@ class M_admin extends CI_Model{
     public function data_belum_bayar()
     {
         $query = $this->db->query("SELECT * FROM tb_tagihan A JOIN tb_tagihan_siswa B ON A.id=B.id_tagihan JOIN tb_siswa C ON B.nis=C.nis");
+        return $query->result();
+    }
+    public function filter_data_belum_bayar($angkatan, $jurusan)
+    {
+        $query = $this->db->query("SELECT * FROM tb_tagihan A JOIN tb_tagihan_siswa B ON A.id=B.id_tagihan JOIN tb_siswa C ON B.nis=C.nis WHERE C.angkatan = $angkatan AND C.jurusan = '$jurusan'");
         return $query->result();
     }
 

@@ -57,4 +57,20 @@ class Cetak extends CI_Controller {
 
 		$this->load->view('admin/cetak', $data);
 	}
+	public function cetak_tunggakan()
+	{
+		if($_POST['filter'] == 'true')
+		{
+			$angkatan = $this->input->post('angkatan');
+			$jurusan = $this->input->post('jurusan');
+			$data['angkatan'] = $angkatan;
+			$data['jurusan'] = $jurusan;
+			$data['data_bayar'] = $this->M_admin->filter_data_belum_bayar($angkatan, $jurusan);
+		}
+		else {
+			$data['data_bayar'] = $this->M_admin->data_belum_bayar();
+		}
+
+		$this->load->view('admin/body/cetak_tunggakan', $data);
+	}
 }

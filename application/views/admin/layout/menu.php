@@ -45,6 +45,10 @@
                             <a href="<?php echo base_url(); ?>admin/laporan">
                                 <span class="iconify icon" data-icon="carbon:report"></span>Laporan</a>
                         </li>
+                        <li>
+                            <a href="<?php echo base_url(); ?>admin/tunggakan">
+                                <span class="iconify icon" data-icon="carbon:report"></span>Laporan Tunggakan</a>
+                        </li>
                         <?php
                         if($level_admin == 1)
                         {
@@ -113,6 +117,10 @@
                         <li>
                             <a href="<?php echo base_url(); ?>admin/laporan">
                                 <span class="iconify icon" data-icon="carbon:report"></span>Laporan</a>
+                        </li>
+                        <li>
+                            <a href="<?php echo base_url(); ?>admin/tunggakan">
+                                <span class="iconify icon" data-icon="carbon:report"></span>Laporan Tunggakan</a>
                         </li>
                         <?php
                         if($level_admin == 1)
